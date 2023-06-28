@@ -3,7 +3,7 @@
 include_once '../config.php'; 
  
 $pdo = new PDO(
-  "mysql:host=$host;dbname=$dbname",
+  "mysql:host=$host;dbname=$dbname;charset=$dbChar",
   $username, $password, [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_NAMED
