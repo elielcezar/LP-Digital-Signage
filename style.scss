@@ -51,6 +51,28 @@ ul{
     }
 }
 
+a.btn{
+    color: #fff;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 15px;
+    background: -webkit-linear-gradient(45deg, #002d53, #1b4992);
+    font-weight: 300;
+    text-decoration: none;
+    width: 300px;
+    box-shadow: inset -5px -5px 5px rgba(0,0,0,.35);
+    transition: background-image 0.5s linear;
+    display: inline-block;
+
+    &:hover{
+        background: #002d53;
+    }
+
+    strong{
+        font-weight: 700;
+    }
+}
+
 .container{
     width: 90%;
     max-width: 1000px;
@@ -71,7 +93,7 @@ header{
     
     .container{
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         max-width: 1250px;
 
         @media(max-width:1300px){
@@ -152,7 +174,7 @@ header{
                     text-align: left;
 
                     @media(orientation:landscape){
-                        max-width: 40%;
+                        max-width: 50%;
                     }
 
                     @media(orientation:portrait){
@@ -179,6 +201,24 @@ header{
                         color: #fff;
                         line-height: 1.35em;
                     }
+                    ul{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        li{
+                            color: #fff;
+                            display: inline-block;
+                            padding: 15px 0 15px 40px;
+                            background-position: left center;
+                            background-repeat: no-repeat;
+                            background-size: 35px;
+
+                            &.equipamentos{background-image: url(img/ico-equipamentos.png);}
+                            &.tecnologia{background-image: url(img/ico-tecnologia.png);}
+                            &.conteudo{background-image: url(img/ico-conteudo.png);}
+                            &.monetizacao{background-image: url(img/ico-monetizacao.png);}
+                        }
+                    }
                     a.btn{
                         font-size: 1.1em;
                         color: #fff;
@@ -188,6 +228,7 @@ header{
                         margin-top: 40px;
                         display: inline-block;                        
                         background: transparent url(img/ico-play-amarelo.png) left center no-repeat;
+                        box-shadow: none;
 
                         @media(orientation:portrait){
                             font-size: 1em;
@@ -307,6 +348,12 @@ header{
 }
 
 #pilares{
+    img{
+        margin-bottom: 75px;
+    }
+    a.btn{
+        font-size: 24px;
+    }
     .mob{
         @media(orientation:landscape){
             display: none;
@@ -451,6 +498,7 @@ header{
         ul{
             display: flex;
             flex-wrap: wrap;
+            margin-bottom: 75px;
 
             @media(orientation:portrait){         
                 justify-content: center;
@@ -501,6 +549,13 @@ header{
                 &.petshop::before{background-image: url(img/ico-petshop.png);}
             }
         }
+
+        a.btn{            
+            strong{
+                display: inline-block;
+                width: 100%;                
+            }
+        }
     }
 }
 
@@ -517,6 +572,7 @@ header{
         ul{
             display: flex;
             flex-wrap: wrap;
+            margin-bottom: 50px;
 
             @media(orientation:portrait){
                 flex-direction: column;
@@ -591,6 +647,13 @@ header{
                 
             }
         }
+
+        a.btn{            
+            strong{
+                display: inline-block;
+                width: 100%;                
+            }
+        }
     }
 }
 
@@ -626,15 +689,27 @@ header{
                     }
 
                     img{
-                        width: 80px;                                        
-                        height: auto;
-                        border-radius: 50%;
+                        width: 100%;
+                        max-width: 70px;                                        
+                        height: auto;                            
+                        display: inline-block;
 
                         @media(orientation:portrait){
                             width: 100px !important;
                             height: 100px !important;
                         }
                     }
+                }                
+            }
+
+            .item.chama{
+                img{
+                    max-width: 85px;
+                }
+            }
+            .item.condor{
+                img{
+                    max-width: 99px;
                 }
             }
 
@@ -662,12 +737,13 @@ header{
     }
 }
 
-#depoimentos{
+#depoimentos{    
     @media(orientation:portrait){
         margin: 50px 0 80px 0!important;
     }
 
     .container{
+        max-width: 600px;
         h2{
             margin-bottom: 100px;
             strong{
@@ -678,29 +754,30 @@ header{
                 margin-bottom: 25px;
             }
         }
-        .depoimentos{
+        .depoimentos{                      
             @media(orientation:landscape){
                 display: flex;
                 flex-wrap: wrap;
             }
 
             .item{
-                margin: 0 20px;                
+                //margin: 0 20px;                
 
-                @media(orientation:landscape){
-                    width: 46%;                
-                    margin: 0 2% 2% 2%;
+                @media(orientation:landscape){                    
+                    margin: 0 20px 20px 20px; 
+                    //width: 46%;                
+                    //margin: 0 2% 2% 2%;
                 }
                 
                 .content{                    
                     display: inline-block;                
                     border-radius: 20px;                
                     padding: 20px 30px;
-                    
+                    min-height: 290px;
                     text-align: left;  
                     background: #fff;        
                     position: relative;     
-                    box-shadow: 5px 5px 10px rgba(0,0,0,.1);
+                    box-shadow: 1px 5px 10px rgba(0,0,0,.2);
 
                     @media(orientation:portrait){
                         width: 100%;                        
@@ -733,9 +810,38 @@ header{
                     }
 
                     &.gol::after{background-image: url(img/logo-gol.png);}
-                    &.condor::after{background-image: url(img/logo-condor.png);}
+                    &.condor::after{
+                        background-image: url(img/logo-condor.png);
+                        width: 120px;
+                    }
                     &.hiperideal::after{background-image: url(img/logo-hiperideal.png);}
                     &.chama::after{background-image: url(img/logo-chama.png);}
+                }
+            }
+            .slick-arrow{
+                border: 1px solid;
+                text-indent: -5000em;
+                background-color: #fff;
+                border-radius: 50%;
+                width: 34px;
+                height: 34px;
+                z-index: 5;
+                box-shadow: 3px 3px 10px rgba(0,0,0,.15);
+                top: 45%;
+                
+                &::before{
+                    display: none;
+                }
+
+                &.slick-prev{
+                    background: #fff url(img/seta-esq.png) center no-repeat;
+                    background-position: 9px 6px;
+                    left: -42px;
+                }
+                &.slick-next{
+                    background: #fff url(img/seta-dir.png) center no-repeat;
+                    background-position: 13px 6px;
+                    right: -42px;
                 }
             }
         }
@@ -876,25 +982,10 @@ header{
             p{
                 font-size: 18px;
                 margin: 40px 0;
-            }
+            }   
             a.btn{
-                color: #fff;
-                font-size: 21px;
-                padding: 15px;
-                border-radius: 15px;
-                background: -webkit-linear-gradient(45deg, #002d53, #1b4992);
-                font-weight: 300;
-                text-decoration: none;
-                width: 200px;
-
-                &:hover{
-                    background: #021423;
-                }
-
-                strong{
-                    font-weight: 700;
-                }
-            }
+                text-align: center;
+            }         
         }
     }
 }
@@ -934,6 +1025,7 @@ form{
             color: #fff;
             background: #021423;
             cursor: pointer;
+            margin-top: 25px;
 
             &:hover{
                 background: $azul;
@@ -951,7 +1043,7 @@ form{
 
         .alert{
             color: #fff;
-            margin-bottom: 25px;
+            margin-top: 25px;
             padding: 10px;
             border: 1px solid #fff;
 
@@ -979,13 +1071,13 @@ footer{
   
     .container{
         display: flex;
+        justify-content: space-between;
 
         @media(orientation:portrait){
             flex-direction: column;            
         }
 
-        .col-1{
-            flex: 50%;
+        .col-1{            
             text-align: left;
 
             @media(orientation:portrait){
@@ -994,8 +1086,7 @@ footer{
             }
         }        
         .col-2,
-        .col-3{
-            flex: 25%;
+        .col-3{            
             text-align: left;
 
             @media(orientation:portrait){

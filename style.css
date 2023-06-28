@@ -47,6 +47,26 @@ ul li {
   margin: 0;
 }
 
+a.btn {
+  color: #fff;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 15px;
+  background: -webkit-linear-gradient(45deg, #002d53, #1b4992);
+  font-weight: 300;
+  text-decoration: none;
+  width: 300px;
+  box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.35);
+  transition: background-image 0.5s linear;
+  display: inline-block;
+}
+a.btn:hover {
+  background: #002d53;
+}
+a.btn strong {
+  font-weight: 700;
+}
+
 .container {
   width: 90%;
   max-width: 1000px;
@@ -68,7 +88,7 @@ header {
 }
 header .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   max-width: 1250px;
 }
 @media (max-width: 1300px) {
@@ -145,7 +165,7 @@ header nav ul li:hover a {
 }
 @media (orientation: landscape) {
   #top .banners .item .container .col-1 {
-    max-width: 40%;
+    max-width: 50%;
   }
 }
 @media (orientation: portrait) {
@@ -173,6 +193,31 @@ header nav ul li:hover a {
   color: #fff;
   line-height: 1.35em;
 }
+#top .banners .item .container .col-1 ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#top .banners .item .container .col-1 ul li {
+  color: #fff;
+  display: inline-block;
+  padding: 15px 0 15px 40px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 35px;
+}
+#top .banners .item .container .col-1 ul li.equipamentos {
+  background-image: url(img/ico-equipamentos.png);
+}
+#top .banners .item .container .col-1 ul li.tecnologia {
+  background-image: url(img/ico-tecnologia.png);
+}
+#top .banners .item .container .col-1 ul li.conteudo {
+  background-image: url(img/ico-conteudo.png);
+}
+#top .banners .item .container .col-1 ul li.monetizacao {
+  background-image: url(img/ico-monetizacao.png);
+}
 #top .banners .item .container .col-1 a.btn {
   font-size: 1.1em;
   color: #fff;
@@ -182,6 +227,7 @@ header nav ul li:hover a {
   margin-top: 40px;
   display: inline-block;
   background: transparent url(img/ico-play-amarelo.png) left center no-repeat;
+  box-shadow: none;
 }
 @media (orientation: portrait) {
   #top .banners .item .container .col-1 a.btn {
@@ -287,6 +333,12 @@ header nav ul li:hover a {
   }
 }
 
+#pilares img {
+  margin-bottom: 75px;
+}
+#pilares a.btn {
+  font-size: 24px;
+}
 @media (orientation: landscape) {
   #pilares .mob {
     display: none;
@@ -422,6 +474,7 @@ header nav ul li:hover a {
 #segmentos .container ul {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 75px;
 }
 @media (orientation: portrait) {
   #segmentos .container ul {
@@ -483,6 +536,10 @@ header nav ul li:hover a {
 #segmentos .container ul li.petshop::before {
   background-image: url(img/ico-petshop.png);
 }
+#segmentos .container a.btn strong {
+  display: inline-block;
+  width: 100%;
+}
 
 #cases .container {
   max-width: 1200px;
@@ -498,6 +555,7 @@ header nav ul li:hover a {
 #cases .container ul {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 @media (orientation: portrait) {
   #cases .container ul {
@@ -578,6 +636,10 @@ header nav ul li:hover a {
 #cases .container ul li.gol::after {
   background-image: url(img/logo-gol.png);
 }
+#cases .container a.btn strong {
+  display: inline-block;
+  width: 100%;
+}
 
 @media (orientation: portrait) {
   #vitrine {
@@ -612,15 +674,22 @@ header nav ul li:hover a {
   }
 }
 #vitrine .container .vitrine .item .logo img {
-  width: 80px;
+  width: 100%;
+  max-width: 70px;
   height: auto;
-  border-radius: 50%;
+  display: inline-block;
 }
 @media (orientation: portrait) {
   #vitrine .container .vitrine .item .logo img {
     width: 100px !important;
     height: 100px !important;
   }
+}
+#vitrine .container .vitrine .item.chama img {
+  max-width: 85px;
+}
+#vitrine .container .vitrine .item.condor img {
+  max-width: 99px;
 }
 #vitrine .container .vitrine .slick-arrow {
   text-indent: -5000em;
@@ -647,6 +716,9 @@ header nav ul li:hover a {
     margin: 50px 0 80px 0 !important;
   }
 }
+#depoimentos .container {
+  max-width: 600px;
+}
 #depoimentos .container h2 {
   margin-bottom: 100px;
 }
@@ -664,23 +736,20 @@ header nav ul li:hover a {
     flex-wrap: wrap;
   }
 }
-#depoimentos .container .depoimentos .item {
-  margin: 0 20px;
-}
 @media (orientation: landscape) {
   #depoimentos .container .depoimentos .item {
-    width: 46%;
-    margin: 0 2% 2% 2%;
+    margin: 0 20px 20px 20px;
   }
 }
 #depoimentos .container .depoimentos .item .content {
   display: inline-block;
   border-radius: 20px;
   padding: 20px 30px;
+  min-height: 290px;
   text-align: left;
   background: #fff;
   position: relative;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
 }
 @media (orientation: portrait) {
   #depoimentos .container .depoimentos .item .content {
@@ -716,12 +785,37 @@ header nav ul li:hover a {
 }
 #depoimentos .container .depoimentos .item .content.condor::after {
   background-image: url(img/logo-condor.png);
+  width: 120px;
 }
 #depoimentos .container .depoimentos .item .content.hiperideal::after {
   background-image: url(img/logo-hiperideal.png);
 }
 #depoimentos .container .depoimentos .item .content.chama::after {
   background-image: url(img/logo-chama.png);
+}
+#depoimentos .container .depoimentos .slick-arrow {
+  border: 1px solid;
+  text-indent: -5000em;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  z-index: 5;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  top: 45%;
+}
+#depoimentos .container .depoimentos .slick-arrow::before {
+  display: none;
+}
+#depoimentos .container .depoimentos .slick-arrow.slick-prev {
+  background: #fff url(img/seta-esq.png) center no-repeat;
+  background-position: 9px 6px;
+  left: -42px;
+}
+#depoimentos .container .depoimentos .slick-arrow.slick-next {
+  background: #fff url(img/seta-dir.png) center no-repeat;
+  background-position: 13px 6px;
+  right: -42px;
 }
 
 #sobre .container {
@@ -857,20 +951,7 @@ header nav ul li:hover a {
   margin: 40px 0;
 }
 #contato .container .col-2 a.btn {
-  color: #fff;
-  font-size: 21px;
-  padding: 15px;
-  border-radius: 15px;
-  background: -webkit-linear-gradient(45deg, #002d53, #1b4992);
-  font-weight: 300;
-  text-decoration: none;
-  width: 200px;
-}
-#contato .container .col-2 a.btn:hover {
-  background: #021423;
-}
-#contato .container .col-2 a.btn strong {
-  font-weight: 700;
+  text-align: center;
 }
 
 form {
@@ -910,6 +991,7 @@ form .form-group button {
   color: #fff;
   background: #021423;
   cursor: pointer;
+  margin-top: 25px;
 }
 form .form-group button:hover {
   background: #002d53;
@@ -923,7 +1005,7 @@ form .form-group p.help-block {
 }
 form .form-group .alert {
   color: #fff;
-  margin-bottom: 25px;
+  margin-top: 25px;
   padding: 10px;
   border: 1px solid #fff;
 }
@@ -947,6 +1029,7 @@ footer {
 }
 footer .container {
   display: flex;
+  justify-content: space-between;
 }
 @media (orientation: portrait) {
   footer .container {
@@ -954,7 +1037,6 @@ footer .container {
   }
 }
 footer .container .col-1 {
-  flex: 50%;
   text-align: left;
 }
 @media (orientation: portrait) {
@@ -965,7 +1047,6 @@ footer .container .col-1 {
 }
 footer .container .col-2,
 footer .container .col-3 {
-  flex: 25%;
   text-align: left;
 }
 @media (orientation: portrait) {

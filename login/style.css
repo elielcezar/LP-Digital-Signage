@@ -1,0 +1,121 @@
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+.container {
+  max-width: 1300px;
+  text-align: center;
+}
+
+h1, h2, h3, th, .btn {
+  font-family: "Lato", sans-serif;
+}
+
+/*--- HOME --------------------------------------------*/
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff url(https://www.megamidia.com.br/lp/digital-signage/img/bg-geral.jpg);
+}
+.login form {
+  max-width: 400px;
+  background-color: #00235b;
+  padding: 50px;
+  border-radius: 0;
+  margin: 50px auto 0 auto;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+}
+.login form .erro {
+  background: rgb(192, 39, 12);
+  color: #fff;
+  padding: 5px 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  display: none;
+}
+.login form .erro.active {
+  display: block;
+}
+.login form .erro p {
+  display: inline-block;
+  margin: 0;
+}
+.login form .form-control {
+  margin-bottom: 25px;
+}
+.login form label {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.login form .btn-primary {
+  background: #f1cd2c;
+  color: #00235b;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+.login form .btn-primary:hover {
+  background: #fff;
+}
+
+/*--- LEADS --------------------------------------------*/
+.leads .container {
+  max-width: 1100px;
+  margin: auto;
+  margin-bottom: 50px;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.leads .container.show {
+  height: auto;
+}
+.leads .container header {
+  text-align: center;
+  padding: 70px 0;
+}
+.leads .container header h1 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #00235b;
+}
+.leads .container .wrapper {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+}
+.leads .container table {
+  margin: 0;
+}
+.leads .container table th {
+  background: #fff;
+}
+.leads .container table th:nth-child(1) {
+  width: 20%;
+}
+.leads .container table th:nth-child(2) {
+  width: 20%;
+}
+.leads .container table th:nth-child(3) {
+  width: 20%;
+}
+.leads .container table th:nth-child(4) {
+  width: 40%;
+}
+.leads .container table td {
+  background: #fff;
+  text-align: left;
+}
+.leads .container a.btn {
+  font-size: 21px;
+  font-weight: bold;
+  padding: 15px 45px;
+  margin-bottom: 50px;
+}/*# sourceMappingURL=style.css.map */

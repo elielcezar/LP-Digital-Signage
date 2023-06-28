@@ -3,7 +3,7 @@
 if(empty($_POST['name'])      ||
    empty($_POST['email'])     ||
    empty($_POST['phone'])     ||
-   empty($_POST['message'])   ||
+   empty($_POST['empresa'])   ||   
    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
    {
    echo "No arguments Provided!";
@@ -13,13 +13,26 @@ if(empty($_POST['name'])      ||
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $phone = strip_tags(htmlspecialchars($_POST['phone']));
+$empresa = strip_tags(htmlspecialchars($_POST['empresa']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
 
-// Create the email and send the message
-$to = 'marcus.andreoli@megamidia.com.br'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+include '../config.php';
+
+$pdo = new PDO(
+"mysql:host=".$host.";charset=utf8mb4;dbname=".$dbname,
+$username, $password, [
+PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+]);
+
+$stmt = $pdo->prepare("INSERT INTO `leads` (`email`, `name`, `phone`, `empresa`, `message`) VALUES (?, ?, ?, ?, ?)");
+$stmt->execute([ $email_address, $name, $phone, $empresa, $message ]);
+
+
+$to = 'eliel@megamidia.com.br'; 
 $email_subject = "Digital Signage | Contato pelo Site";
-$email_body = "Você recebeu uma nova mensagem pelo formulário de contato do site.\n\n"."Nome: $name\n\nEmail: $email_address\n\nTelefone: $phone\n\nMensagem:\n$message";
-$headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$email_body = "Você recebeu uma nova mensagem pelo formulário de contato do site.\n\n"."Nome: $name\n\n"."Email: $email_address\n\n"."Telefone: $phone\n\n"."Empresa:\n$empresa\n\n"."Mensagem: $message";
+$headers = "From: noreply@yourdomain.com\n"; 
 $headers .= "Reply-To: $email_address";
 mail($to,$email_subject,$email_body,$headers);
 return true;
